@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.fileviewer.tokenizer","l":"ColoredToken"},{"p":"com.fileviewer.fileviewer","l":"FileWindow"},{"p":"com.fileviewer.tokenizer","l":"JsonTokenizer"},{"p":"com.fileviewer.fileviewer","l":"Launcher"},{"p":"com.fileviewer.tokenizer","l":"JsonTokenizer.TokenPos"}];updateSearchResults();

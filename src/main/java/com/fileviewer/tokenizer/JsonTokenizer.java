@@ -5,13 +5,35 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 
+/**
+ * Class to tokenize a JSON file
+ */
 public final class JsonTokenizer {
+    /**
+     * The position of a given colorized token
+     */
     public static final class TokenPos
     {
+        /**
+         * Start position of this token
+         */
         public int start;
+        /**
+         * Length of this token
+         */
         public int length;
+        /**
+         * ColoredToken found at the given position and spanning the given length
+         */
         public ColoredToken token;
 
+        /**
+         * Construct a token and its position
+         *
+         * @param s start index
+         * @param len length of the token
+         * @param ct the ColoredToken itself
+         */
         public TokenPos(int s, int len, ColoredToken ct)
         {
             this.start = s;
@@ -19,6 +41,10 @@ public final class JsonTokenizer {
             this.token = ct;
         }
     }
+
+    /**
+     * A list of JSON tokens with attached colors
+     */
     // https://www.json.org/json-en.html
     private static final ColoredToken[] jsonTokens = {
             // Open curly brace
@@ -42,8 +68,15 @@ public final class JsonTokenizer {
             // Colon
             new ColoredToken("^\\:", 10, Color.LIGHTGREY)
     };
+    /**
+     * A token representing a math we aren't sure how to categorize
+     */
     private static final ColoredToken unknownMatch = new ColoredToken("", 11, Color.TRANSPARENT);
 
+    /**
+     * Test function for JsonTokenizer
+     * @param args Command-line arguments (ignored)
+     */
     public static void main(String [] args)
     {
         String jsonInput = "{\n";
@@ -76,6 +109,12 @@ public final class JsonTokenizer {
         }
     }
 
+    /**
+     * Static function to return a list of tokens and their positions
+     *
+     * @param input The JSON string we want to parse
+     * @return A list of colored JSON tokens attached to their positions and lengths
+     */
     public static ArrayList<TokenPos> tokenize(String input)
     {
         ArrayList<TokenPos> positions = new ArrayList<TokenPos>();

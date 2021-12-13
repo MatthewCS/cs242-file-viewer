@@ -34,6 +34,9 @@ import java.io.*;
 import java.util.ArrayList;
 
 
+/**
+ * Window used to view a file
+ */
 public class FileWindow extends Application {
 
     private String filename;
@@ -50,12 +53,23 @@ public class FileWindow extends Application {
     private final int CSV_MAX_COLS = 500;
     private final int CSV_MAX_ROWS = 500;
 
+    /**
+     * Main method to run the file viewer. If you are building a jar, please build it using the main
+     * method in the Launcher class and not this one.
+     *
+     * @param args Command-line arguments
+     */
     public static void main(String [] args)
     {
         DEBUG_MODE = false;
         launch(args);
     }
 
+    /**
+     * Start the fileviewer GUI.
+     *
+     * @param primaryStage The stage to run this fileviewer on
+     */
     @Override
     public void start(Stage primaryStage)
     {
@@ -257,6 +271,12 @@ public class FileWindow extends Application {
         primaryStage.show();
     }
 
+    /**
+     * Load an image into the fileviewer.
+     *
+     * @param filename The file name of the image
+     * @param img The image object we are loading
+     */
     public void loadImage(String filename, Image img)
     {
         this.filename = filename;
@@ -278,6 +298,12 @@ public class FileWindow extends Application {
         this.fileContentsGrid.setBackground(new Background(gridBackgroundImage));
     }
 
+    /**
+     * Load a CSV file into the fileviewer.
+     *
+     * @param filename The file name of the CSV file
+     * @param csvRawText The contents of the CSV we are loading, stored as a string
+     */
     public void loadCSV(String filename, String csvRawText)
     {
         this.filename = filename;
@@ -334,6 +360,12 @@ public class FileWindow extends Application {
         this.fileContentsGrid.add(csvTable, 0, 0);
     }
 
+    /**
+     * Load JSON file into the fileviewer.
+     *
+     * @param filename The file name of the JSON file
+     * @param jsonRawText The contents of the JSON file we are loading, stored as a string.
+     */
     public void loadJson(String filename, String jsonRawText)
     {
         this.filename = filename;
