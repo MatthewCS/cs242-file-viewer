@@ -9,3 +9,9 @@ The FileViewer has a complete, working image viewer (supporting .PNGs, .JPGs, .G
 The image viewer and CSV file viewer are done using fairly simple, standard implentations. The JSON file viewer is done by embedding a Swing node into the JavaFX application, as JavaFX has no native support for syntax highlighting.
 
 Syntax highlighting is done using a purpose-built JSON tokenizer.
+
+![Image viewer](/image-viewer.png)
+
+![CSV viewer](/csv-viewer.png)
+
+![JSON viewer](/json-viewer.png)
